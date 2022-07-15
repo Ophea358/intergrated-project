@@ -1,6 +1,8 @@
 # intergrated-project
 collab repository for group project
 
+PLEASE INPUT FULL NAME AND STUDENT ID INTO team_members.txt 
+
 # guide for pfb part
 
 1.	Make an API call  to https://www.alphavantage.co to extract forex (FX) with the following API parameters:
