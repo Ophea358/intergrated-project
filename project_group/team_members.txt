@@ -1,12 +1,24 @@
-Tjioe Siang Hwee Sarah (10248183F)
+# name = "Low Mei Yi"
+# np_email = " "
+# student_id = " "
+# class_number = "TA02"
+
+# name = "See Yan Tze Torsten"
+# np_email = " "
+# student_id = " "
+# class_number = " "
 
 # name = "Tracy Yong Zi Ling"
 # np_email = "s10220906@connect.np.edu.sg"
 # student_id = "10220906A"
 # class_number = "TA02"
 
-Meiyi
+# name = "Tjioe Siang Hwee Sarah"
+# np_email = "s10248183@connect.np.edu.sg"
+# student_id = "10248183F"
+# class_number = "TA02"
 
-Mark 
-
-Torsten
+# name = "Wee Yi Ren Mark"
+# np_email = " "
+# student_id = " "
+# class_number = "TA02"
