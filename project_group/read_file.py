@@ -7,3 +7,8 @@
 # Cash On Hand :  Flag the days and deficit amount when the current day is lower than the previous day.
 # Overheads : Flag the  category with the highest overheads. 
 # Convert the amount flagged from part a, b and c with the mean of the weekly closing forex price from the API call.
+
+from pathlib import Path
+
+file_path = Path.cwd()/"project_group"
+print(file_path)
