@@ -27,3 +27,7 @@ for file in file_path.glob("*.csv"):
 cash_on_hand = file_path/"cvs"/"Cash on Hand.csv"
 overheads = file_path/"cvs"/"Overheads.csv"
 profit_loss = file_path/"cvs"/"Profit and Loss.csv"
+
+def data_collection(data):
+  with data.open(mode = 'r', encoding = 'UTF-8') as file:
+          info = files.read()
