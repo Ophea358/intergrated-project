@@ -3,5 +3,5 @@ import requests
 
 url = "https://www.alphavantage.co/query?function=CURRENCY_EXCHANGE_RATE&from_currency=USD&to_currency=SGD&apikey=GJVFL0NV2F7LZ8UV"
 response = requests.get(url)
-print(response)
 data = response.json()
+print(data)
