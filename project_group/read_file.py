@@ -14,10 +14,10 @@ from pathlib import Path
 import re, csv
 
 # instantiate a file path object to current working directory
-file_path = Path.cwd()/"project_group"
-for file in file_path.glob('.csv'):
-  with open(file,mode='r',encoding='UTF-8') as files:
-    info=files.read()
+#file_path = Path.cwd()/"project_group"
+#for file in file_path.glob('.csv'):
+  #with open(file,mode='r',encoding='UTF-8') as files:
+    #info=files.read()
 
 # instantiate a file path object to current working directory
 for file in file_path.glob("*.csv"):
