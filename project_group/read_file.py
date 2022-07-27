@@ -15,9 +15,6 @@ import re, csv
 
 # instantiate a file path object to current working directory
 file_path = Path.cwd()/"project_group"
-
-# iterate over the 3 csv files in the csv folder
-for file in home.glob('.csv'):
-cash_on_hand = file_path/"Cash on Hand.csv"
-profit_and_loss = file_path/"Profit & Loss.csv"
-overheads = file_path/"Overheads.csv"
+for file in file_path.glob('.csv'):
+  with open(file,mode='r',encoding='UTF-8') as files:
+    info=files.read()
