@@ -16,5 +16,5 @@ import re, csv
 # instantiate a file path object to current working directory
 file_path = Path.cwd()/"project_group"
 
-# iterate over the 3 csv files in the folder
+# iterate over the 3 csv files in the csv folder
 for file in home.glob('.csv'):
