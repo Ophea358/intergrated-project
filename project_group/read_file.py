@@ -19,10 +19,11 @@ import re, csv
   #with open(file,mode='r',encoding='UTF-8') as files:
     #info=files.read()
 
-# instantiate a file path object to current working directory
+# iterate over the 3 csv files in the cvs_report folder
 for file in file_path.glob("*.csv"):
     print(file)
-   
+
+# text files in the csv_report folder
 cash_on_hand = file_path/"cvs"/"Cash on Hand.csv"
 overheads = file_path/"cvs"/"Overheads.csv"
 profit_loss = file_path/"cvs"/"Profit and Loss.csv"
