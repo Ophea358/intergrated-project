@@ -13,5 +13,5 @@ from pathlib import Path
 # import re, csv module
 import re, csv
 
+# instantiate a file path object to current working directory
 file_path = Path.cwd()/"project_group"
-print(file_path)
