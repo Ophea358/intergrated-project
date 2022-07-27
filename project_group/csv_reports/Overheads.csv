@@ -1,0 +1,23 @@
+Day,Items,Note,Amount
+45,Human Resource Expense,Counselled,2000
+45,Human Resource Expense,Counselled,2000
+45,Marketing Expense,Cash Payment - Marketing - New York - Mouthwash,100
+45,Marketing Expense,Cash Payment - Marketing - New York - Body Wash,100
+45,Marketing Expense,Cash Payment - Marketing - New York - Shampoo,100
+45,Marketing Expense,Cash Payment - Marketing - Los Angeles - Mouthwash,100
+45,Marketing Expense,Cash Payment - Marketing - Los Angeles - Body Wash,100
+45,Marketing Expense,Cash Payment - Marketing - Los Angeles - Shampoo,100
+45,Marketing Expense,Cash Payment - Marketing - Detroit - Mouthwash,100
+45,Marketing Expense,Cash Payment - Marketing - Detroit - Body Wash,100
+45,Marketing Expense,Cash Payment - Marketing - Detroit - Shampoo,100
+45,Salary Expense,Cash Payment - Salary Expense,23725
+45,Shipping Expense,Cash Payment - Shipping Expense - Web Sales Order: 5919,300
+45,Shipping Expense,Cash Payment - Shipping Expense - Web Sales Order: 5938,200
+45,Interest Expense,Cash Payment - Interest - For Overdraft,3082
+45,Depreciation Expense,Non-Cash Expense - Depreciation,10000
+45,Overflow Expense - Retail,Cash Payment - Overflow Fee New York,988
+45,Rental Expense,Cash Payment - RentalNew York,10720
+45,Rental Expense,Cash Payment - RentalLos Angeles,4320
+45,Rental Expense,Cash Payment - RentalDetroit,4000
+45,Overflow Expense - Warehouse,Cash Payment - Overflow FeeMiami,594
+45,Rental Expense,Cash Payment - RentalMiami,4800
