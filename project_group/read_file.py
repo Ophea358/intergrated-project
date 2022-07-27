@@ -18,3 +18,4 @@ file_path = Path.cwd()/"project_group"
 
 # iterate over the 3 csv files in the csv folder
 for file in home.glob('.csv'):
+profit_and_loss = file_path/"profit_and_loss.csv"
