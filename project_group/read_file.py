@@ -31,6 +31,6 @@ profit_loss = file_path/"cvs"/"Profit and Loss.csv"
 def data_collection(data):
   with data.open(mode = 'r', encoding = 'UTF-8') as file:
           info = files.read()
-          cash_on_hand = re.findall(pattern = r"", string = text)
-          overheads = re.findall(pattern = r"", string = text)
-          profit_loss = re.findall(pattern = r"", string = text)
+          cash_on_hand = re.findall(pattern = r"", string = info)
+          overheads = re.findall(pattern = r"", string = info)
+          profit_loss = re.findall(pattern = r"", string = info)
