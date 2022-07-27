@@ -18,3 +18,11 @@ file_path = Path.cwd()/"project_group"
 for file in file_path.glob('.csv'):
   with open(file,mode='r',encoding='UTF-8') as files:
     info=files.read()
+
+# instantiate a file path object to current working directory
+for file in file_path.glob("*.csv"):
+    print(file)
+   
+cash_on_hand = file_path/"cvs"/"Cash on Hand.csv"
+overheads = file_path/"cvs"/"Overheads.csv"
+profit_loss = file_path/"cvs"/"Profit and Loss.csv"
