@@ -8,7 +8,10 @@
 # Overheads : Flag the  category with the highest overheads. 
 # Convert the amount flagged from part a, b and c with the mean of the weekly closing forex price from the API call.
 
+# import Path function from pathlib
 from pathlib import Path
+# import re, csv module
+import re, csv
 
 file_path = Path.cwd()/"project_group"
 print(file_path)
