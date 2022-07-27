@@ -23,7 +23,7 @@ import re, csv
 for file in file_path.glob("*.csv"):
     print(file)
 
-# text files in the csv_report folder
+# csv files in the csv_report folder
 cash_on_hand = file_path/"cvs"/"Cash on Hand.csv"
 overheads = file_path/"cvs"/"Overheads.csv"
 profit_loss = file_path/"cvs"/"Profit and Loss.csv"
