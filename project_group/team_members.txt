@@ -1,16 +1,11 @@
 # name = "Low Mei Yi"
-# np_email = "S10242227@connect.np.edu.sg"
+# np_email = "s10242227@connect.np.edu.sg"
 # student_id = "S10242227A"
 # class_number = "TA02"
 
 # name = "See Yan Tze Torsten"
-# np_email = "S10240148@connect.np.edu.sg"
-# student_id = "S10240148"
-# class_number = "TA02"
-
-# name = "Tracy Yong Zi Ling"
-# np_email = "s10220906@connect.np.edu.sg"
-# student_id = "10220906A"
+# np_email = "s10240148@connect.np.edu.sg"
+# student_id = "S10240148G"
 # class_number = "TA02"
 
 # name = "Tjioe Siang Hwee Sarah"
@@ -18,7 +13,12 @@
 # student_id = "10248183F"
 # class_number = "TA02"
 
+# name = "Tracy Yong Zi Ling"
+# np_email = "s10220906@connect.np.edu.sg"
+# student_id = "10220906A"
+# class_number = "TA02"
+
 # name = "Wee Yi Ren Mark"
-# np_email = "S10242859@connect.np.edu.sg"
-# student_id = "S10242859"
+# np_email = "s10242859@connect.np.edu.sg"
+# student_id = "10242859D"
 # class_number = "TA02"
