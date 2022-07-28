@@ -25,19 +25,26 @@ for file in file_path.glob("*.csv"):
 
 # csv files in the csv_report folder
 overheads = file_path/"csv"/"Overheads.csv"
-overheadstats = []
+
 def data_collection(data):
   with data.open(mode = 'r', encoding = 'UTF-8') as files:
           info = files.read()
           overheads = re.findall(pattern = r"[E][X][P][E][N][S][E]", string = info)
           
           overheads = overheads.group
-          overheadstats.append(overheads)
-     
+
           file_path = Path.cwd()/"project_group"/"summary_report.txt"
           file_path_csv.exists()
 
-with file_path.open(mode = "w", encoding = "UTF-8", newline = "") as file:
-  writer = csv.writer(file)
-  writer.writerow(overheadstats)
-  writer.writerows( )
+          full_list = []
+          
+          if file_path_csv.exists() == False:
+               file_path_csv.touch()
+               with file_path_csv.open(mode = 'w', encoding = 'UTF-8', newline = '') as file:
+                    writer = csv.writer(file)
+                    writer.writerow([])
+                    writer.writerows()
+          else:
+               with file_path_csv.open(mode = 'a', encoding = 'UTF-8', newline = '') as file:
+                    writer = csv.writer(file)
+                    writer.writerows()
