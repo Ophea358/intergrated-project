@@ -47,3 +47,34 @@ def data_collection(data):
           print(max(full_list))
               
 print(data_collection(overheads))
+
+# fixed code - s
+# read and extract data from Overheads
+
+# Overheads : The program will find the highest overhead category and its value. 
+# Convert the amount flagged from part a, b and c using the real time exchange rate from the API call.
+
+# import Path function from pathlib
+from pathlib import Path
+# import re, csv module
+import re, csv
+
+# instantiate a file path object to current working directory
+overheads = Path.cwd()/"project_group"/"csv_reports"/"Overheads.csv"
+
+# iterate over the 3 csv files in the cvs_report folder
+csvrep = Path.cwd()/"project_group"/"csv_reports"
+for file in csvrep.glob("*.csv"):
+    print(file)
+
+
+full_list = []
+with overheads.open(mode = 'r', encoding = 'UTF-8') as file:
+    reader = csv.reader(file)
+    next(reader)
+    next(reader)
+    for line in reader:
+        print(line)
+        full_list.append(line)
+print(max(full_list))
+              
