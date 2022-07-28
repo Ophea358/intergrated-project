@@ -29,17 +29,12 @@ overheads = file_path/"csv"/"Overheads.csv"
 def data_collection(data):
   with data.open(mode = 'r', encoding = 'UTF-8') as files:
           info = files.read()
-          overheads = re.findall(pattern = r"", string = info)
+          overheads = re.findall(pattern = r"[E][X][P][E][N][S][E]", string = info)
           
-          # write data into txt file
+          overheads = overheads.group
 
-from pathlib import Path
-import re,csv
-
-file_path = Path.cwd()/"project_group"/"summary_report.txt"
-file_path.touch()
-print(file_path)
-print(file_path.exists())
+          file_path = Path.cwd()/"project_group"/"summary_report.txt"
+          file_path_csv.exists()
 
 with file_path.open(mode = "w", encoding = "UTF-8", newline = "") as file:
   writer = csv.writer(file)
