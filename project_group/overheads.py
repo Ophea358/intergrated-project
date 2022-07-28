@@ -32,7 +32,8 @@ def data_collection(data):
           overheads = re.findall(pattern = r"[E][X][P][E][N][S][E]", string = info)
           
           overheads = overheads.group
-
+          overheadstats.append(overheads)
+     
           file_path = Path.cwd()/"project_group"/"summary_report.txt"
           file_path_csv.exists()
 
