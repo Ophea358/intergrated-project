@@ -24,11 +24,11 @@ file_path = Path.cwd()/"project_group"
     #print(file)
 
 # csv files in the csv_report folder
-profit_loss = Path.cwd()/"project_group"/"csv_reports"
-
-for file in profit_loss.glob("Profit and Loss.csv"):
+profit_loss = Path.cwd()/"project_group"/"csv_reports"/"Porift and Loss.csv"
   with profit_loss.open(mode = 'r', encoding = 'UTF-8') as file:
     target = file.read()
+  for line in target:
+
   day = re.findall(pattern = "[0-9][0-9]", string = target)[0]
   sales = re.findall(pattern = r"[0-8].+", string = target)[0]
   trading_profit = re.findall(pattern = r"[0-8].+", string = target)[1]
