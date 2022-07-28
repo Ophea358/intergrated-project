@@ -24,7 +24,7 @@ for file in file_path.glob("*.csv"):
     print(file)
 
 # csv files in the csv_report folder
-overheads = file_path/"cvs"/"Overheads.csv"
+overheads = file_path/"csv"/"Overheads.csv"
 
 def data_collection(data):
   with data.open(mode = 'r', encoding = 'UTF-8') as files:
