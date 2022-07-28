@@ -25,7 +25,7 @@ for file in file_path.glob("*.csv"):
 
 # csv files in the csv_report folder
 overheads = file_path/"csv"/"Overheads.csv"
-
+overheadstats = []
 def data_collection(data):
   with data.open(mode = 'r', encoding = 'UTF-8') as files:
           info = files.read()
@@ -38,5 +38,5 @@ def data_collection(data):
 
 with file_path.open(mode = "w", encoding = "UTF-8", newline = "") as file:
   writer = csv.writer(file)
-  writer.writerow([])
+  writer.writerow(overheadstats)
   writer.writerows( )
