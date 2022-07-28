@@ -37,14 +37,4 @@ def data_collection(data):
           file_path_csv.exists()
 
           full_list = []
-          
-          if file_path_csv.exists() == False:
-               file_path_csv.touch()
-               with file_path_csv.open(mode = 'w', encoding = 'UTF-8', newline = '') as file:
-                    writer = csv.writer(file)
-                    writer.writerow([])
-                    writer.writerows()
-          else:
-               with file_path_csv.open(mode = 'a', encoding = 'UTF-8', newline = '') as file:
-                    writer = csv.writer(file)
-                    writer.writerows()
+          with.open(r""
