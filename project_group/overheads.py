@@ -37,4 +37,12 @@ def data_collection(data):
           file_path_csv.exists()
 
           full_list = []
-          with.open(r""
+          with.open(r".\csv_reports\overheads.csv", "r") as file:
+            reader = csv.reader(file)
+            next(reader)
+            next(reader)
+            for line in reader:
+              print(line)
+              full_list.append(line)
+              
+           pritn(max(full_list))
