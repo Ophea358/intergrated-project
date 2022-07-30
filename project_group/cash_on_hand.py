@@ -46,16 +46,16 @@ def cash_def():
     deficit_list = []
     excrate = api.excrate()
     while True:
-      if len(deficit_list) == 0:
-          with file_path.open(mode = "a", encoding = "UTF-8", newline = "") as file:
-              file.write(f"\n[CASH SURPLUS] CASH ON EACH DAY IS HIGHER THAN PREVIOUS DAY")
-      else:
+        if len(deficit_list) == 0:
+            with file_path.open(mode = "a", encoding = "UTF-8", newline = "") as file:
+                file.write(f"\n[CASH SURPLUS] CASH ON EACH DAY IS HIGHER THAN PREVIOUS DAY")
+        else:
           # there are deficit values
-          if figure < prev_figure:
-              with file_path.open(mode = "a", encoding = "UTF-8", newline = "") as file:
-                  day = cash_list
-                  convert = excrate* deficit_list
-                  file.write(f"\n[CASH DEFICIT]DAY: {day}, AMOUNT: SGD {convert}")
-          else:
-              pass
+            if figure < prev_figure:
+                with file_path.open(mode = "a", encoding = "UTF-8", newline = "") as file:
+                    day = cash_list
+                    convert = excrate* deficit_list
+                    file.write(f"\n[CASH DEFICIT]DAY: {day}, AMOUNT: SGD {convert}")
+            else:
+                pass
 print(cash_def())
