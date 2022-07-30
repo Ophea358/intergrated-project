@@ -1,6 +1,6 @@
 # name = "Low Mei Yi"
-# np_email = " "
-# student_id = " "
+# np_email = "s10242227@connect.np.edu.sg"
+# student_id = "10242227A"
 # class_number = "TA02"
 
 # name = "See Yan Tze Torsten"
