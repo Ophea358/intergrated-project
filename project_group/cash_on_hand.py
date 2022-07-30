@@ -26,7 +26,7 @@ print(cash_list)
 
 # write data into txt file
 file_path = Path.cwd()/"project_group"/"summary_report.txt"
-file_path.touch
+file_path.touch()
 print(file_path)
 print(file_path.exists())
 
@@ -45,16 +45,17 @@ def cash_def():
     prev_figure = cash_list(range(8))
     deficit_list = []
     excrate = api.excrate()
-    if len(deficit_list) == 0:
-        with file_path.open(mode = "a", encoding = "UTF-8", newline = "") as file:
-            file.write(f"\n[CASH SURPLUS] CASH ON EACH DAY IS HIGHER THAN PREVIOUS DAY")
-    else:
-        # there are deficit values
-        if figure < prev_figure:
-            with file_path.open(mode = "a", encoding = "UTF-8", newline = "") as file:
-                day = cash_list
-                convert = excrate* deficit_list
-                file.write(f"\n[CASH DEFICIT]DAY: {day}, AMOUNT: SGD {convert}")
-        else:
-            pass
+    while True:
+      if len(deficit_list) == 0:
+          with file_path.open(mode = "a", encoding = "UTF-8", newline = "") as file:
+              file.write(f"\n[CASH SURPLUS] CASH ON EACH DAY IS HIGHER THAN PREVIOUS DAY")
+      else:
+          # there are deficit values
+          if figure < prev_figure:
+              with file_path.open(mode = "a", encoding = "UTF-8", newline = "") as file:
+                  day = cash_list
+                  convert = excrate* deficit_list
+                  file.write(f"\n[CASH DEFICIT]DAY: {day}, AMOUNT: SGD {convert}")
+          else:
+              pass
 print(cash_def())
