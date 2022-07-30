@@ -41,8 +41,8 @@ def cash_def():
     calculates cash on hand and highlights deficits
     '''
     # any deficit figures will be put into deficit_list
-    figure = cash_list(range(1,9))
-    prev_figure = cash_list(range(8))
+    figure = cash_list[range(0,9)]
+    prev_figure = cash_list[range(8)]
     deficit_list = []
     excrate = api.excrate()
     while True:
