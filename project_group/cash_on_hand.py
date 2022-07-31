@@ -32,7 +32,7 @@ deficit_list = []
 
 def cash_def():
     '''
-    calculates cash on hand and highlights deficits
+    checks cash on hand and highlights deficits
     '''
     # exchange rate data
     url = "https://www.alphavantage.co/query?function=CURRENCY_EXCHANGE_RATE&from_currency=USD&to_currency=SGD&apikey=GJVFL0NV2F7LZ8UV"
