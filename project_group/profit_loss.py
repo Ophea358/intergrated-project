@@ -1,55 +1,78 @@
-# read and extract data from files
+# read and extract data from cash on hand
 
-# flag = mark 
-# deficit = when money is too small / an excess of expenditure or liabilities over income or assets in a given period
+# Cash On Hand :  The program will compute the difference in the net profit between each day. If the net profit is not consecutively higher each day, the program will highlight the day where net profit is lower than the previous day and the value difference.
+# Convert the amount flagged from part a, b and c using the real time exchange rate from the API call.
 
-# Profit & Loss :  Flag  the days and deficit amount of the net profit when the current day is lower than the previous day.
-# Cash On Hand :  Flag the days and deficit amount when the current day is lower than the previous day.
-# Overheads : Flag the  category with the highest overheads. 
-# Convert the amount flagged from part a, b and c with the mean of the weekly closing forex price from the API call.
-
-# import Path function from pathlib
 from pathlib import Path
-# import re, csv module
-import re, csv
+import csv, requests, json
 
-# instantiate a file path object to current working directory
-file_path = Path.cwd()/"project_group"
-#for file in file_path.glob('.csv'):
-  #with open(file,mode='r',encoding='UTF-8') as files:
-    #info=files.read()
+# csv file in the csv_report folder
+csvrep = Path.cwd()/"project_group"/"csv_reports"
+for file in csvrep.glob("*.csv"):
+    print(file)
+profit_loss = Path.cwd()/"project_group"/"csv_reports"/"Profit and Loss.csv"
 
-# iterate over the 3 csv files in the cvs_report folder
-#for file in file_path.glob("*.csv"):
-    #print(file)
 
-# csv files in the csv_report folder
-profit_loss = Path.cwd()/"project_group"/"csv_reports"/"Porift and Loss.csv"
-  with profit_loss.open(mode = 'r', encoding = 'UTF-8') as file:
-    target = file.read()
-  for line in target:
-
-  day = re.findall(pattern = "[0-9][0-9]", string = target)[0]
-  sales = re.findall(pattern = r"[0-8].+", string = target)[0]
-  trading_profit = re.findall(pattern = r"[0-8].+", string = target)[1]
-  print(trading_profit)
-
-def data_collection(data):
-  with data.open(mode = 'r', encoding = 'UTF-8') as files:
-    info = files.read()
-  profit_loss = re.findall(pattern = r"", string = info)
+# input data into list
+net_list = []
+with profit_loss.open(mode = 'r', encoding='utf-8-sig') as file:
+    reader = csv.reader(file)
+    next(reader)
+    for line in reader:
+        print(line)
+        net_list.append(line)
+print(net_list)
 
 # write data into txt file
+file_path = Path.cwd()/"project_group"/"summary_report.txt"
+print(file_path)
+print(file_path.exists())
 
-from pathlib import Path
-import re,csv
+deficit_list = []
 
-#ile_path = Path.cwd()/"project_group"/"summary_report.txt"
-#file_path.touch()
-#print(file_path)
-#print(file_path.exists())
+def net_def():
+    '''
+    checks profit and loss and highlights deficits
+    '''
+    # exchange rate data
+    url = "https://www.alphavantage.co/query?function=CURRENCY_EXCHANGE_RATE&from_currency=USD&to_currency=SGD&apikey=GJVFL0NV2F7LZ8UV"
+    response = requests.get(url)
+    data = response.text
+    # convert data to json to retrieve exchange rate  
+    datadict = json.loads(data)
+    dataval = datadict["Realtime Currency Exchange Rate"]
+    exrate = dataval.get("5. Exchange Rate")
 
-#with file_path.open(mode = "w", encoding = "UTF-8", newline = "") as file:
-  #writer = csv.writer(file)
-  #writer.writerow([])
-  #writer.writerows( )
+    # any deficit figures will be put into deficit_list
+    figure = 1
+    prev_figure = 0
+    while figure < len(net_list):
+        nested = net_list[figure]
+        prev_nested = net_list[prev_figure]
+        rate = float(exrate)
+        if nested[4] < prev_nested[4]:
+            for line in nested[4]:
+                deficit_list.append(line)
+            with file_path.open(mode = "a", encoding = "UTF-8", newline = "") as file:
+                day = float(nested[0])
+                convert = (rate* float(nested[1]))
+                file.write(f"\n[NET PROFIT DEFICIT]DAY: {day}, AMOUNT: SGD {round(convert,2)}")
+                figure = figure + 1
+                prev_figure = prev_figure + 1
+        else:
+            figure = figure + 1
+            prev_figure = prev_figure + 1
+
+        
+print(net_def())
+
+def net_sur():
+    '''
+    checks if there is a net profit surplus
+    '''
+    if len(deficit_list) == 0:
+        with file_path.open(mode = "a", encoding = "UTF-8", newline = "") as file:
+            file.write(f"\n[NET PROFIT SURPLUS] NET PROFIT ON EACH DAY IS HIGHER THAN PREVIOUS DAY")
+    else:
+        pass
+print(net_sur())
