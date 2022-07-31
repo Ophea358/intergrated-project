@@ -25,7 +25,6 @@ print(cash_list)
 
 # write data into txt file
 file_path = Path.cwd()/"project_group"/"summary_report.txt"
-file_path.touch
 print(file_path)
 print(file_path.exists())
 
