@@ -13,11 +13,14 @@ def apiwrite():
     # convert data to json to retrieve exchange rate  
     datadict = json.loads(data)
     dataval = datadict["Realtime Currency Exchange Rate"]
-    exrate = dataval["5. Exchange Rate"]
-
+    exrate = dataval.get("5. Exchange Rate")
+    
     # input real time currency conversion rate into summary report
     file_path = Path.cwd()/"project_group"/"summary_report.txt"
     file_path.touch
     with file_path.open(mode = "w") as file:
         file.write(f"[REAL TIME CURRENCY CONVERSION RATE] USD1 = SGD{exrate}")
+    return exrate
+
 print(apiwrite())
+
