@@ -38,22 +38,12 @@ def high_heads():
     exrate = dataval.get("5. Exchange Rate")
 
     # the highest overhead will be highlighted in the summary report
-    figure = 0
-    while figure <= len(exp_list):
-        nested = exp_list[figure]
-        max_val = 0
-        nestval = float(nested[1])
-        if nestval > max_val:
-                max_val = nestval
-                exp = nested[0]
-        else:
-            pass
-
+    max_val = max(exp_list, key=lambda x: float(x[1]))
     rate = float(exrate)
     with file_path.open(mode = "a", encoding = "UTF-8", newline = "") as file:
-                convert = (rate* max_val)
-                exp = exp.touppercase()
+                convert = (rate* float(max_val[1]))
+                exp = (max_val[0]).upper()
                 file.write(f"\n[HIGHEST OVERHEADS] {exp}: SGD {round(convert,2)}")
+
 print(high_heads())
-                
               
