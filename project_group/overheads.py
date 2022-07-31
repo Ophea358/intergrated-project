@@ -46,4 +46,3 @@ def high_heads():
                 file.write(f"\n[HIGHEST OVERHEADS] {exp}: SGD {round(convert,2)}")
 
 print(high_heads())
-              
