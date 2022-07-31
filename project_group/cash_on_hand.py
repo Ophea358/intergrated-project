@@ -43,7 +43,7 @@ def cash_def():
     dataval = datadict["Realtime Currency Exchange Rate"]
     exrate = dataval.get("5. Exchange Rate")
 
-    # any deficit figures will be put into deficit_list
+    # any deficit figures will be highlighted in the summary report
     figure = 1
     prev_figure = 0
     while figure < len(cash_list):
