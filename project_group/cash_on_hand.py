@@ -4,7 +4,7 @@
 # Convert the amount flagged from part a, b and c using the real time exchange rate from the API call.
 
 from pathlib import Path
-import csv, requests, json
+import csv, requests, json, api
 
 # csv file in the csv_report folder
 csvrep = Path.cwd()/"project_group"/"csv_reports"
@@ -24,20 +24,13 @@ file_path = Path.cwd()/"project_group"/"summary_report.txt"
 print(file_path.exists())
 
 deficit_list = []
+#import exchange rate
+exrate = api.apiwrite()
 
 def cash_def():
     '''
     checks cash on hand and highlights deficits
     '''
-    # exchange rate data
-    url = "https://www.alphavantage.co/query?function=CURRENCY_EXCHANGE_RATE&from_currency=USD&to_currency=SGD&apikey=GJVFL0NV2F7LZ8UV"
-    response = requests.get(url)
-    data = response.text
-    # convert data to json to retrieve exchange rate  
-    datadict = json.loads(data)
-    dataval = datadict["Realtime Currency Exchange Rate"]
-    exrate = dataval.get("5. Exchange Rate")
-
     # any deficit figures will be highlighted in the summary report
     figure = 1
     prev_figure = 0
@@ -71,4 +64,3 @@ def cash_sur():
     else:
         pass
 print(cash_sur())
-
