@@ -17,6 +17,7 @@ def apiwrite():
 
     # input real time currency conversion rate into summary report
     file_path = Path.cwd()/"project_group"/"summary_report.txt"
+    file_path.touch
     with file_path.open(mode = "w") as file:
         file.write(f"[REAL TIME CURRENCY CONVERSION RATE] USD1 = SGD{exrate}")
 print(apiwrite())
