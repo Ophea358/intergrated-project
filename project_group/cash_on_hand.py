@@ -8,8 +8,6 @@ import csv, requests, json
 
 # csv file in the csv_report folder
 csvrep = Path.cwd()/"project_group"/"csv_reports"
-for file in csvrep.glob("*.csv"):
-    print(file)
 cash_on_hand = Path.cwd()/"project_group"/"csv_reports"/"Cash on Hand.csv"
 
 
@@ -19,13 +17,10 @@ with cash_on_hand.open(mode = 'r', encoding='utf-8-sig') as file:
     reader = csv.reader(file)
     next(reader)
     for line in reader:
-        print(line)
         cash_list.append(line)
-print(cash_list)
 
 # write data into txt file
 file_path = Path.cwd()/"project_group"/"summary_report.txt"
-print(file_path)
 print(file_path.exists())
 
 deficit_list = []
@@ -76,3 +71,4 @@ def cash_sur():
     else:
         pass
 print(cash_sur())
+
