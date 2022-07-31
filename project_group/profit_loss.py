@@ -8,8 +8,6 @@ import csv, requests, json
 
 # csv file in the csv_report folder
 csvrep = Path.cwd()/"project_group"/"csv_reports"
-for file in csvrep.glob("*.csv"):
-    print(file)
 profit_loss = Path.cwd()/"project_group"/"csv_reports"/"Profit and Loss.csv"
 
 
@@ -19,9 +17,7 @@ with profit_loss.open(mode = 'r', encoding='utf-8-sig') as file:
     reader = csv.reader(file)
     next(reader)
     for line in reader:
-        print(line)
         net_list.append(line)
-print(net_list)
 
 # write data into txt file
 file_path = Path.cwd()/"project_group"/"summary_report.txt"
