@@ -4,8 +4,8 @@
 # class_number = "TA02"
 
 # name = "See Yan Tze Torsten"
-# np_email = " "
-# student_id = " "
+# np_email = "s10240148@connect.np.edu.sg "
+# student_id = "10240148G "
 # class_number = "TA02"
 
 # name = "Tracy Yong Zi Ling"
