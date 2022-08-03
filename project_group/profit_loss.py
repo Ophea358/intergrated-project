@@ -44,7 +44,8 @@ def net_def():
                 deficit_list.append(line)
             with file_path.open(mode = "a", encoding = "UTF-8", newline = "") as file:
                 day = float(nested[0])
-                convert = (rate* float(nested[1]))
+                diff = (float(prev_nested[1]) - float(nested[1]))
+                convert = (rate* diff)
                 file.write(f"\n[NET PROFIT DEFICIT]DAY: {day}, AMOUNT: SGD {round(convert,2)}")
                 figure = figure + 1
                 prev_figure = prev_figure + 1
